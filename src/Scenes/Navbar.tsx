@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
       <FlexBetween gap="0.75rem">
-        <AgricultureIcon sx={{ fontSize: "28px" }} />
+        <AgricultureIcon sx={{ fontSize: "20px" }} />
         <Typography variant="h4" fontSize={"16px"}>
           Smart Agriculture Monitoring System
         </Typography>

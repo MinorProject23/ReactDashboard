@@ -12,7 +12,7 @@ function Navbar() {
       <FlexBetween gap="0.75rem">
         <AgricultureIcon sx={{ fontSize: "20px" }} />
         <Typography variant="h4" fontSize={"16px"}>
-          Smart Agriculture Monitoring System
+          Simplified Agriculture Monitoring System
         </Typography>
       </FlexBetween>
 

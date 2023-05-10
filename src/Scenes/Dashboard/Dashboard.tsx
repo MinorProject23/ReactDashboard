@@ -1,27 +1,20 @@
 import { Box, useMediaQuery } from "@mui/material";
-import Row1 from "./Row1";
-import Row2 from "./Row2";
-import Row3 from "./Row3";
+import DashboardTiles from "./DashboardTiles";
 
 const gridTemplateLargeScreen = `
-  "a b c"
-  "a b c"
-  "a b c"
-  "a b f"
-  "d e f"
-  "d e f"
-  "d h i"
-  "g h i"
-  "g h j"
-  "g h j"
+  "a b"
+  "a b"
+  "a b"
+  "c d"
+  "c d"
+  "c d"
+  
 `;
 
 const gridTemplateSmallScreen = `
   "a"
   "a"
   "a"
-  "a"
-  "b"
   "b"
   "b"
   "b"
@@ -31,21 +24,6 @@ const gridTemplateSmallScreen = `
   "d"
   "d"
   "d"
-  "e"
-  "e"
-  "f"
-  "f"
-  "f"
-  "g"
-  "g"
-  "h"
-  "h"
-  "h"
-  "h"
-  "i"
-  "i"
-  "j"
-  "j"
 `;
 
 const Dashboard = () => {
@@ -55,24 +33,22 @@ const Dashboard = () => {
       width={"100%"}
       height={"100%"}
       display={"grid"}
-      gap={"1.5rem"}
+      rowGap={"1.5rem"}
+      columnGap={isAboveMediumScreen ? "1rem" : "0rem"}
       sx={
         isAboveMediumScreen
           ? {
-              gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
-              gridTemplateRows: "repeat(10, minmax(40px , 1fr))",
+              gridTemplateColumns: "repeat(2, minmax(370px, 1fr))",
+              gridTemplateRows: "repeat(6, minmax(60px , 1fr))",
               gridTemplateAreas: gridTemplateLargeScreen,
             }
           : {
-              gridAutoColumns: "1fr",
-              gridAutoRows: "80px",
+              gridTemplateRows: "repeat(12, minmax(80px , 1fr))",
               gridTemplateAreas: gridTemplateSmallScreen,
             }
       }
     >
-      <Row1 />
-      <Row2 />
-      <Row3 />
+      <DashboardTiles />
     </Box>
   );
 };
